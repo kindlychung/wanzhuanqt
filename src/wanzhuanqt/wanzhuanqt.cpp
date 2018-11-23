@@ -1,6 +1,8 @@
-
-#include <iostream>
-int main() {
-    std::cout << "hello" << std::endl;
-    return 0;
+#include <QtWidgets/QApplication>
+#include "clock.h"
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+    AnalogClock clock;
+    clock.show();
+    return app.exec();
 }

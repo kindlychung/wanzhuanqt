@@ -16,7 +16,7 @@ class wanzhuanqtConan(ConanFile):
     license = "LGPL"
     author = "kaiyin keezhong@qq.com"
     url = "https://github.com/kindlychung/wanzhuanqt"
-    description = "change_your_description"
+    description = "An example of using the Qt5 conan package"
     topics = ("cpp", )
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
@@ -34,11 +34,10 @@ class wanzhuanqtConan(ConanFile):
         self.copy("*", dst="bin", src="bin")
 
     def imports(self):
-        self.copy("*", dst="include", src="**/include")
-        self.copy("*.dll", dst="bin", src="**/bin")
-        self.copy("*.dylib*", dst="bin", src="**/lib")
-        self.copy("*.a", dst="bin", src="**/lib")
-        self.copy("*.so", dst="bin", src="**/lib")
+        self.copy("*", dst="include", src="include")
+        self.copy("*.dll", dst="bin", src="bin")
+        self.copy("*.dylib*", dst="bin", src="lib")
+        self.copy("*", dst="bin", src="lib", keep_path=False)
 
     def deploy(self):
         self.copy("*", src="bin", dst=conan_bin_dir)
