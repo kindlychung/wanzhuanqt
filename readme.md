@@ -16,6 +16,6 @@ conan build ..
 
 ```sh
 bin/wanzhuanqt
-``
+```
 
 You should be able to see an analog clock app.
