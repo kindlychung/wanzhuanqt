@@ -34,11 +34,11 @@ class wanzhuanqtConan(ConanFile):
         self.copy("*", dst="bin", src="bin")
 
     def imports(self):
-        self.copy("*", dst="include", src="include")
-        self.copy("*.dll", dst="bin", src="bin")
-        self.copy("*.dylib*", dst="bin", src="lib")
-        self.copy("*.a", dst="bin", src="lib")
-        self.copy("*.so", dst="bin", src="lib")
+        self.copy("*", dst="include", src="**/include")
+        self.copy("*.dll", dst="bin", src="**/bin")
+        self.copy("*.dylib*", dst="bin", src="**/lib")
+        self.copy("*.a", dst="bin", src="**/lib")
+        self.copy("*.so", dst="bin", src="**/lib")
 
     def deploy(self):
         self.copy("*", src="bin", dst=conan_bin_dir)
